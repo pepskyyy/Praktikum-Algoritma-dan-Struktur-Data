@@ -1,5 +1,4 @@
 public class Mahasiswa01 {
-    class Mahasiswa{
         String nama;
         String nim;
         String kelas;
@@ -21,15 +20,16 @@ public class Mahasiswa01 {
         }
 
         String nilaiKinerja(){
-            if (ipk >= 3.5){
-                return "Kinerja sangat baik";
-            } else if (ipk >= 3.0){
-                return "Kinerja baik";
-            } else if (ipk >= 2.5){
-                return "Kinerja cukup";
-            } else {
-                return "Kinerja kurang";
-            }
+        if (ipk <= 0.0){
+            return "Tidak Valid, Harus antara 0.0 dan 4.0";
+        } else if (ipk <= 2.0){
+            return "Buruk";
+        } else if (ipk <= 3.0){
+            return "Cukup";
+        } else if (ipk <= 3.5){
+            return "Baik";
+        } else {
+            return "Sangat Baik";
+        }
         }
     }
-}
