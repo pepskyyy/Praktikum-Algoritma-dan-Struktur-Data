@@ -70,4 +70,15 @@ public class AntrianLayanan01 {
     public int getJumlahAntrian() {
         return size;
     }
+
+    // Modifikasi pada bagian 2.2.3 Pertanyaan
+    public void lihatAkhir() {
+        if (isEmpty()){
+            System.out.println("Antrian kosong.");
+        } else {
+            System.out.print("Mahasiswa paling belakang: ");
+            System.out.println("NIM NAMA PRODI KELAS");
+            data[rear].tampilkanData();
+    }
+}
 }
