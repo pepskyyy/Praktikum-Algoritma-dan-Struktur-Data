@@ -1,35 +1,33 @@
+import java.util.Scanner;
 public class SLLMain01 {
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList01 sll = new SingleLinkedList01();
 
-        Mahasiswa01 mhs1 = new Mahasiswa01("24212200", "Alvaro", "1A", 4.0);
-        Mahasiswa01 mhs2 = new Mahasiswa01("23212201", "Bimon", "2B", 3.8);
-        Mahasiswa01 mhs3 = new Mahasiswa01("22212202", "Cintia", "3C", 3.5);
-        Mahasiswa01 mhs4 = new Mahasiswa01("21212203", "Dirga", "4D", 3.6);
+        System.out.println("Masukkan jumlah mahasiswa : ");
+        int jumlah = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < jumlah; i++) {
+            System.out.println("\nData mahasiswa ke-" + (i + 1));
+            System.out.println("Nama: ");
+            String nama = sc.nextLine();
+            System.out.println("NIM: ");
+            String nim = sc.nextLine();
+            System.out.println("Kelas: ");
+            String kelas = sc.nextLine();
+            System.out.println("IPK: ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
+
+            Mahasiswa01 mhs = new Mahasiswa01(nama, nim, kelas, ipk);
+
+            sll.addLast(mhs);
+        }
     
-    sll.print();
+        System.out.println("\nHasil Input Linked List : ");
+        sll.print();
 
-    sll.addFirst(mhs4);
-    sll.print();
-
-    sll.addLast(mhs1);
-    sll.print();
-
-    sll.insertAfter("Dirga", mhs3);
-    sll.insertAt(2, mhs2);
-    sll.print();
-
-    System.out.println("data index 1 : ");
-    sll.getData(1);
-
-    System.out.println("data mahasiswa an Bimon berada pada index : "+sll.indexOf("Bimon"));
-    System.out.println();
-
-    sll.removeFirst();
-    sll.removeLast();
-    sll.print();
-    sll.removeAt(0);
-    sll.print();   
+        sc.close();
     }
 }
