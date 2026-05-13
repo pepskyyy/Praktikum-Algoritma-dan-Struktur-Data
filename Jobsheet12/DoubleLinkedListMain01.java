@@ -9,7 +9,9 @@ public static void main(String[] args) {
         System.out.println("1. Tambah Data di Awal");
         System.out.println("2. Tambah Data di Akhir");
         System.out.println("3. Sisipkan Data di tengah (Setelah NIM):");
-        System.out.println("4. Tampilkan data");
+        System.out.println("4. Hapus data di awal");
+        System.out.println("5. Hapus data di akhir");
+        System.out.println("6. Tampilkan data");
         System.out.println("0. Keluar");
         System.out.print("Pilih menu: ");
         pilihan = sc.nextInt();
@@ -32,6 +34,12 @@ public static void main(String[] args) {
                 dll.inserAfter(keyNim, mhsBaru);
                 break;
             case 4:
+                dll.removeFirst();
+                break;
+            case 5:
+                dll.removeLast();
+                break;
+            case 6:
                 dll.print();
                 break;
             case 0:
